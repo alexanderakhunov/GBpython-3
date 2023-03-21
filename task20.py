@@ -6,13 +6,24 @@ K – 5 очков; J, X – 8 очков; Q, Z – 10 очков. А русск
 
 *Пример:*
 
-ноутбук
-    12
-    """
-import re
-dicti={'АВЕИНОРСТ':5,'ДКЛМПУ':2,'БГЁЬЯ':3,'ЙЫ':4,'ЖЗХЦЧ':5,'ШЭЮ':8,'ФЩЪ':10}
-
-text=input().upper()
-print(sum([k for i in text for k, v in dicti.items() if i in v]))
-
+eng = {1:'AEIOULNSTR',
+      	2:'DG',
+      	3:'BCMP',
+      	4:'FHVWY',
+      	5:'K',
+      	8:'JZ',
+      	10:'QZ'}
+rus = {1:'АВЕИНОРСТ',
+      	2:'ДКЛМПУ',
+      	3:'БГЁЬЯ',
+      	4:'ЙЫ',
+      	5:'ЖЗХЦЧ',
+      	8:'ШЭЮ',
+      	10:'ФЩЪ'}
+word=input().upper()
+n = int(input())
+if n ==1:
+    print(sum([k for i in word for k, v in rus.items() if i in v]))
+elif n == 0:
+    print(sum([k for i in word for k, v in eng.items() if i in v]))
 
